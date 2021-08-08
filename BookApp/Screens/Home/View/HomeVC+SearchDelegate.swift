@@ -6,3 +6,14 @@
 //
 
 import Foundation
+import UIKit
+extension HomeVC: UISearchResultsUpdating,UISearchBarDelegate {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        
+        if let filter = searchController.searchBar.text {
+            presenter.filterContent(for: filter)
+        }
+        tableView.reloadData()
+    }
+}

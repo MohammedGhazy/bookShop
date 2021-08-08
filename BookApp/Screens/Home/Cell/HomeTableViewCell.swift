@@ -7,8 +7,8 @@
 
 import UIKit
 
-class HomeTableViewCell: UITableViewCell {
-    
+class HomeTableViewCell: UITableViewCell, HomeCellView {
+
     static let reuseIdentifier = "HomeTableViewCell"
     
     let titleLabel          = GFTitleLabel(txtAlignment: .left, fontSize: 18)
@@ -95,5 +95,21 @@ class HomeTableViewCell: UITableViewCell {
             avalibaleOrNotLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -padding),
             avalibaleOrNotLabel.heightAnchor.constraint(equalToConstant: 16),
         ])
+    }
+    
+    func displayName(name: String) {
+        titleLabel.text = name
+    }
+    
+    func displayType(type: String) {
+        secondaryTitleLabel.text = type
+    }
+    
+    func displayAvailability(availability: String) {
+        avalibaleOrNotLabel.text = availability
+    }
+    
+    func displayAvailabilityColor(color: UIColor) {
+        avalibaleOrNotStatus.backgroundColor = color
     }
 }

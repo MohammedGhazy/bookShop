@@ -6,3 +6,26 @@
 //
 
 import Foundation
+import UIKit
+import SKActivityIndicatorView
+
+extension DetailVC: DetailView {
+    
+    func showIndecator() {
+        SKActivityIndicator.show()
+    }
+    
+    func deleteIndicator() {
+        SKActivityIndicator.dismiss()
+    }
+    
+    func fetchingDataSuccess() {
+        print("success")
+    }
+    
+    func showError(error: String) {
+        presentGFAlertOnMainThread(title: "Alert", message: error, buttonTitle: "Ok")
+    }
+    
+    
+}

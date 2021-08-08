@@ -6,3 +6,29 @@
 //
 
 import Foundation
+import SKActivityIndicatorView
+
+extension HomeVC : HomeView {
+    
+    func showIndicator() {
+        SKActivityIndicator.show()
+    }
+    
+    func deleteIndicator() {
+        SKActivityIndicator.dismiss()
+    }
+    
+    func fetchingDataSuccess() {
+        tableView.reloadData()
+    }
+    
+    func showError(error: String) {
+        presentGFAlertOnMainThread(title: "Alert", message: error, buttonTitle: "Ok")
+    }
+    
+    func navigateToUserDetailsScreen(book: Book) {
+        let detailVC = DetailVC()
+        detailVC.bookId = book.id
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
+}
