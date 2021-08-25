@@ -29,6 +29,7 @@ extension HomeVC : HomeView {
     func navigateToUserDetailsScreen(book: Book) {
         let detailVC = DetailVC()
         detailVC.bookId = book.id
+        detailVC.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(detailVC, animated: true)
     }
 }

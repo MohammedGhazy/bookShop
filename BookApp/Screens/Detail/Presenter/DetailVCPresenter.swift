@@ -7,25 +7,30 @@
 
 import Foundation
 import Alamofire
+import UIKit
 
 protocol DetailView: AnyObject {
     func showIndecator()
     func deleteIndicator()
     func fetchingDataSuccess()
     func showError(error: String)
-    //func navigateToUserDetailsScreen(book: Book)
+    func addBookToCartBtnAction(book: CartItem)
 }
 
-protocol DetailDataView: AnyObject {
-    func displayData(author: String)
+protocol MainDetailDataView: AnyObject {
+    func displayName(name: String)
+    func displayPrice(price: Double)
+    func displayAuthor(author: String)
+    func displayType(type: String)
+    func displayAvalability(avalibality: String)
 }
 
 class DetailVCPresenter {
     
     private weak var view: DetailView?
     private var singleBookDetail: SingleBook?
-    private weak var detailDataView : DetailDataView?
-    
+    private weak var detailDataView : MainDetailDataView?
+    private var booksList    = [Book]()
     
     init(view: DetailView) {
         self.view  = view
@@ -45,13 +50,29 @@ class DetailVCPresenter {
             } else {
                 guard let singleBook = singleBook else { return }
                 self.singleBookDetail = singleBook
-                self.detailDataView?.displayData(author: singleBook.author)
+                self.detailDataView?.displayName(name: singleBook.name)
+                self.detailDataView?.displayPrice(price: singleBook.price)
+                self.detailDataView?.displayAuthor(author: singleBook.author)
+                self.detailDataView?.displayType(type: singleBook.type)
+                self.detailDataView?.displayAvalability(avalibality: singleBook.available ? "Avalibale Now" : "Not Avalibale")
                 self.view?.fetchingDataSuccess()
             }
         }
     }
     
-    func setDataViewDelegate(detailDataView: DetailDataView?){
+    func setDataViewDelegate(detailDataView: MainDetailDataView?){
         self.detailDataView = detailDataView
+    }
+    
+    func setAddBookToCartBtnAction() {
+        let cartItems = CartItem(
+            id: singleBookDetail!.id,
+            name: singleBookDetail!.name,
+            price: singleBookDetail!.price,
+            quantity: 1,
+            amount: 0.0,
+            available: singleBookDetail!.available
+        )
+        view?.addBookToCartBtnAction(book: cartItems)
     }
 }
