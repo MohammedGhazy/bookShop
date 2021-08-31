@@ -40,10 +40,10 @@ extension UIViewController{
         present(safariVC, animated: true)
     }
     
-    //    func showEmptyState(with message: String , in view: UIView){
-    //        let emptyStateView     = GFEmptyState(message: message)
-    //        emptyStateView.frame   = view.bounds
-    //
-    //        view.addSubview(emptyStateView)
-    //    }
+    func showEmptyState(with message: String , in view: UIView){
+        let emptyCartView     = GFEmptyCart(message: message)
+        emptyCartView.frame   = view.bounds
+        
+        view.addSubview(emptyCartView)
+    }
 }

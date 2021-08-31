@@ -70,9 +70,10 @@ class DetailVCPresenter {
             name: singleBookDetail!.name,
             price: singleBookDetail!.price,
             quantity: 1,
-            amount: 0.0,
+            total: 0.0,
             available: singleBookDetail!.available
         )
         view?.addBookToCartBtnAction(book: cartItems)
+        print(cartItems.quantity)
     }
 }

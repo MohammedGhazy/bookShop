@@ -27,12 +27,6 @@ extension CartVC: UITableViewDelegate,UITableViewDataSource {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let animation = AnimationFactory.makeSlideIn(duration: 0.5, delayFactor: 0.05)
-        let animator = Animator(animation: animation)
-        animator.animate(cell: cell, at: indexPath, in: tableView)
-    }
-    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         guard editingStyle  == .delete else { return }
         
@@ -45,6 +39,7 @@ extension CartVC: UITableViewDelegate,UITableViewDataSource {
             guard let error   = error else{ return }
             self.presentGFAlertOnMainThread(title: "Unable to delete", message: error.rawValue, buttonTitle: "Ok")
         }
+        billView.billLabel.text = String(presenter.returnTotal())
     }
     
     @objc func incrementButtonTapped(_ sender: UIButton) { presenter.setIncrementButton(index: sender.tag) }

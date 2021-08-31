@@ -8,10 +8,10 @@
 import Foundation
 
 struct CartItem: Codable , Equatable {
-    let id           : Int
-    let name         : String
-    let price        : Double
+    var id           : Int
+    var name         : String
+    var price        : Double
     var quantity     : Int
-    let amount       : Double
-    let available    : Bool
+    var total        : Double
+    var available    : Bool
 }

@@ -26,11 +26,11 @@ class HomeTableViewCell: UITableViewCell, HomeCellView {
     
     let containerView: UIView = {
         let containerView = UIView()
-        containerView.layer.shadowColor   = UIColor.gray.cgColor
+        containerView.layer.shadowColor   = UIColor.systemGray.cgColor
         containerView.layer.shadowOpacity = 0.8
         containerView.layer.shadowOffset  = .zero
         containerView.layer.shadowRadius  = 6
-        containerView.backgroundColor     = .white
+        containerView.backgroundColor     = .systemBackground
         containerView.layer.cornerRadius  = 10
         containerView.translatesAutoresizingMaskIntoConstraints = false
         return containerView

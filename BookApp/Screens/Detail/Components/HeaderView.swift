@@ -29,11 +29,11 @@ class HeaderView: UIView {
     }
     
     private func configure() {
-        layer.shadowColor   = UIColor.gray.cgColor
+        layer.shadowColor   = UIColor.systemGray.cgColor
         layer.shadowOpacity = 0.4
         layer.shadowOffset  = .zero
         layer.shadowRadius  = 3
-        backgroundColor     = .white
+        backgroundColor     = .systemBackground
         //        layer.cornerRadius  = 40
         //        layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
         translatesAutoresizingMaskIntoConstraints = false

@@ -29,8 +29,15 @@ class HomeVC: UIViewController {
     }
     
     func configureViewController() {
-        title = "Home"
-        view.backgroundColor = .systemBackground
+        
+        let containerView = UIControl(frame: CGRect.init(x: 0, y: 0, width: 30, height: 30))
+        containerView.addTarget(self, action: #selector(goToCartVC), for: .touchUpInside)
+        let imageCart = UIImageView(frame: CGRect.init(x: 0, y: 0, width: 30, height: 30))
+        imageCart.image = UIImage(named: "cart")
+        containerView.addSubview(imageCart)
+        let searchBarButtonItem = UIBarButtonItem(customView: containerView)
+        searchBarButtonItem.width = 20
+        navigationItem.rightBarButtonItem = searchBarButtonItem
     }
     
     func configureSearchController(){
@@ -54,5 +61,11 @@ class HomeVC: UIViewController {
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
         ])
+    }
+    
+    @objc func goToCartVC() {
+        let vc = CartVC()
+        vc.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

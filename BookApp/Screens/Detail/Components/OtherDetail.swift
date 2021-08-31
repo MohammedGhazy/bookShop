@@ -42,11 +42,11 @@ class OtherDetail: UIView {
         otherDetailStackView.addArrangedSubview(bookTypeLabel)
         otherDetailStackView.addArrangedSubview(bookAvalibalityLabel)
 
-        layer.shadowColor   = UIColor.gray.cgColor
+        layer.shadowColor   = UIColor.systemGray.cgColor
         layer.shadowOpacity = 0.4
         layer.shadowOffset  = .zero
         layer.shadowRadius  = 3
-        backgroundColor     = .white
+        backgroundColor     = .systemBackground
         translatesAutoresizingMaskIntoConstraints = false
     }
     

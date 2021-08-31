@@ -10,22 +10,33 @@ import UIKit
 
 extension CartVC: CartViewDelegate {
     
+    func showEmptyCart() {
+        showEmptyState(with: "Your Cart Is Empty 😞", in: self.view)
+    }
+    
     func didIncrementQuantityButton(at index: Int) {
-        presenter.cartItems[index].quantity+=1
-        print(presenter.cartItems[index].quantity)
+        presenter.cartItems[index].quantity += 1
+        tableView.reloadData()
+        billView.billLabel.text = String(presenter.returnTotal())
+       _ = CartManager.instance.saveItems(cartItems: presenter.cartItems)
     }
     
     func didDecrementQuantityButton(at index: Int) {
-        if presenter.cartItems.count == 0 {
-            CartManager.instance.updateWith(cartItems: presenter.cartItems[index], actionType: .remove) {[weak self] error in
+        let items = presenter.cartItems[index]
+        if items.quantity == 1 {
+            presenter.cartItems.remove(at: index)
+            CartManager.instance.updateWith(cartItems: items, actionType: .remove) {[weak self] error in
                 guard let self = self else { return }
-                guard let error   = error else{ return }
-                self.presentGFAlertOnMainThread(title: "Unable to delete", message: error.rawValue, buttonTitle: "Ok")
+                guard let error = error else { return }
+                self.presentGFAlertOnMainThread(title: "Alert", message: "Unable to delete", buttonTitle: "ok")
+                print(error.rawValue)
             }
-        } else {
-            presenter.cartItems[index].quantity-=1
+        }else {
+            presenter.cartItems[index].quantity -= 1
         }
+        billView.billLabel.text = String(presenter.returnTotal())
+        tableView.reloadData()
+       _ = CartManager.instance.saveItems(cartItems: presenter.cartItems)
     }
 }
-
 

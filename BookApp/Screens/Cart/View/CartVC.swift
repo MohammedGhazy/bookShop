@@ -20,13 +20,18 @@ class CartVC: UIViewController {
         return tableView
     }()
     
+    let billView = BillView()
+    
     var presenter: CartVCPresenter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("array count in manager \(CartManager.instance.items.count)")
         presenter = CartVCPresenter(view: self)
+        presenter.setBillDelegate(cartBillDelegate: self)
         configureViewController()
         configureTableView()
+        configureBillView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,6 +55,16 @@ class CartVC: UIViewController {
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+        ])
+    }
+    
+    func configureBillView() {
+        view.addSubview(billView)
+        NSLayoutConstraint.activate([
+            billView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            billView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            billView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            billView.heightAnchor.constraint(equalToConstant: 30),
         ])
     }
     

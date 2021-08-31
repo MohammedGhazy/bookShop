@@ -9,8 +9,10 @@ import Foundation
 
 class CartManager {
     
-    private init() {}
     
+    var items = [CartItem]()
+    
+    private init() {}
     static let instance             = CartManager()
     static private let defaults     = UserDefaults.standard
     
@@ -37,7 +39,6 @@ class CartManager {
                 case .add :
                     guard !reterivedItems.contains(cartItems) else {
                         complationHandler(.alreadyInFavorites)
-                        
                         return
                     }
                     reterivedItems.append(cartItems)

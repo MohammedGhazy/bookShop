@@ -34,6 +34,9 @@
 		8643B10C26A07FF00037CFB1 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8643B10B26A07FF00037CFB1 /* DetailVC.swift */; };
 		8643B10F26A080640037CFB1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8643B10E26A080640037CFB1 /* TabBarController.swift */; };
 		8643B11326A0887E0037CFB1 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8643B11226A0887E0037CFB1 /* DetailModel.swift */; };
+		86494DD926DE4980003FCCE2 /* CartBillDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86494DD826DE4980003FCCE2 /* CartBillDelegate.swift */; };
+		86494DDE26DE6B3C003FCCE2 /* FavoriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86494DDD26DE6B3C003FCCE2 /* FavoriteVC.swift */; };
+		86494DE026DE8BE4003FCCE2 /* GFEmptyCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86494DDF26DE8BE4003FCCE2 /* GFEmptyCart.swift */; };
 		864A120726D68D7600BC87D6 /* CartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864A120626D68D7600BC87D6 /* CartItem.swift */; };
 		86596E26269DB38A001154A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86596E25269DB38A001154A9 /* AppDelegate.swift */; };
 		86596E28269DB38A001154A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86596E27269DB38A001154A9 /* SceneDelegate.swift */; };
@@ -41,6 +44,7 @@
 		86596E3D269DB38C001154A9 /* BookAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86596E3C269DB38C001154A9 /* BookAppTests.swift */; };
 		86596E48269DB38C001154A9 /* BookAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86596E47269DB38C001154A9 /* BookAppUITests.swift */; };
 		865FDD2926BC174E00DE594F /* HomeVC+SearchDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865FDD2826BC174E00DE594F /* HomeVC+SearchDelegate.swift */; };
+		86A4B2EC26DD1E17006EF959 /* BillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A4B2EB26DD1E17006EF959 /* BillView.swift */; };
 		86B05C0B269EF49F00C70463 /* GFAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B05C0A269EF49F00C70463 /* GFAlertVC.swift */; };
 		86B05C0D269F055C00C70463 /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B05C0C269F055C00C70463 /* constants.swift */; };
 		86BB24EA26C0337A00B2D68C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86BB24E926C0337A00B2D68C /* Assets.xcassets */; };
@@ -105,6 +109,9 @@
 		8643B10B26A07FF00037CFB1 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		8643B10E26A080640037CFB1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		8643B11226A0887E0037CFB1 /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
+		86494DD826DE4980003FCCE2 /* CartBillDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartBillDelegate.swift; sourceTree = "<group>"; };
+		86494DDD26DE6B3C003FCCE2 /* FavoriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteVC.swift; sourceTree = "<group>"; };
+		86494DDF26DE8BE4003FCCE2 /* GFEmptyCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFEmptyCart.swift; sourceTree = "<group>"; };
 		864A120626D68D7600BC87D6 /* CartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItem.swift; sourceTree = "<group>"; };
 		86596E22269DB38A001154A9 /* BookApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86596E25269DB38A001154A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +125,7 @@
 		86596E47269DB38C001154A9 /* BookAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookAppUITests.swift; sourceTree = "<group>"; };
 		86596E49269DB38C001154A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		865FDD2826BC174E00DE594F /* HomeVC+SearchDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeVC+SearchDelegate.swift"; sourceTree = "<group>"; };
+		86A4B2EB26DD1E17006EF959 /* BillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillView.swift; sourceTree = "<group>"; };
 		86B05C0A269EF49F00C70463 /* GFAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAlertVC.swift; sourceTree = "<group>"; };
 		86B05C0C269F055C00C70463 /* constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
 		86BB24E926C0337A00B2D68C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -284,6 +292,7 @@
 		8643B0FB26A07EE30037CFB1 /* Cart */ = {
 			isa = PBXGroup;
 			children = (
+				86494DDA26DE49ED003FCCE2 /* component */,
 				862F0BC426D3B5BB00E884F1 /* Cell */,
 				8643B0FE26A07EF90037CFB1 /* Presenter */,
 				8643B0FD26A07EF40037CFB1 /* Model */,
@@ -298,6 +307,7 @@
 				8643B0FF26A07F160037CFB1 /* CartVC.swift */,
 				862F0BC926D3B97700E884F1 /* CartVC+TableView.swift */,
 				862F0BCB26D3E20900E884F1 /* CartVC+CartViewDelegate.swift */,
+				86494DD826DE4980003FCCE2 /* CartBillDelegate.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -383,8 +393,33 @@
 			isa = PBXGroup;
 			children = (
 				8643B10E26A080640037CFB1 /* TabBarController.swift */,
+				86494DDF26DE8BE4003FCCE2 /* GFEmptyCart.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		86494DDA26DE49ED003FCCE2 /* component */ = {
+			isa = PBXGroup;
+			children = (
+				86A4B2EB26DD1E17006EF959 /* BillView.swift */,
+			);
+			path = component;
+			sourceTree = "<group>";
+		};
+		86494DDB26DE6AB0003FCCE2 /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				86494DDC26DE6AF4003FCCE2 /* View */,
+			);
+			path = Favorite;
+			sourceTree = "<group>";
+		};
+		86494DDC26DE6AF4003FCCE2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				86494DDD26DE6B3C003FCCE2 /* FavoriteVC.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		86596E19269DB38A001154A9 = {
@@ -467,6 +502,7 @@
 		86596E57269DB3F9001154A9 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				86494DDB26DE6AB0003FCCE2 /* Favorite */,
 				8643B10726A07FB70037CFB1 /* Detail */,
 				8643B10126A07F530037CFB1 /* Setting */,
 				8643B0FB26A07EE30037CFB1 /* Cart */,
@@ -772,6 +808,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				86BB24F126C035E700B2D68C /* Animator.swift in Sources */,
+				86A4B2EC26DD1E17006EF959 /* BillView.swift in Sources */,
+				86494DDE26DE6B3C003FCCE2 /* FavoriteVC.swift in Sources */,
 				862F12CE26D54486006CD285 /* CartManager.swift in Sources */,
 				861817F0269DBADB005420A9 /* GFTitleLabel.swift in Sources */,
 				8643B10426A07F730037CFB1 /* SettingVC.swift in Sources */,
@@ -793,6 +831,7 @@
 				861817F4269DBC45005420A9 /* ApiService.swift in Sources */,
 				862F0BC626D3B5D300E884F1 /* CartVCPresenter.swift in Sources */,
 				862F0BCA26D3B97700E884F1 /* CartVC+TableView.swift in Sources */,
+				86494DD926DE4980003FCCE2 /* CartBillDelegate.swift in Sources */,
 				862F0BC826D3B7BC00E884F1 /* CartTableViewCell.swift in Sources */,
 				862DA6A026C154330033C892 /* MainDetail+Delegate.swift in Sources */,
 				8643B10F26A080640037CFB1 /* TabBarController.swift in Sources */,
@@ -802,6 +841,7 @@
 				86F3E99326D29FF800EBED9B /* OtherDetailSingleItem.swift in Sources */,
 				862DA6A626C1764A0033C892 /* ButtonsAction.swift in Sources */,
 				861817F6269DBF3E005420A9 /* HomeTableViewCell.swift in Sources */,
+				86494DE026DE8BE4003FCCE2 /* GFEmptyCart.swift in Sources */,
 				86BB24EF26C035C800B2D68C /* Animation.swift in Sources */,
 				86596E28269DB38A001154A9 /* SceneDelegate.swift in Sources */,
 				861EDFFD26BD534B001ABAF5 /* DetailVCPresenter.swift in Sources */,
