@@ -9,7 +9,9 @@ import Foundation
 import UIKit
 
 protocol CartViewDelegate: AnyObject {
-    func showEmptyCart()
+    func reloadData()
+//    func showEmptyCart()
+//    func hideBill()
     func didIncrementQuantityButton(at index: Int)
     func didDecrementQuantityButton(at index: Int)
 }
@@ -59,11 +61,12 @@ class CartVCPresenter {
             case .success(let items) :
                 if items.isEmpty {
                     print("No Items")
-                    self.view?.showEmptyCart()
+                    //self.view?.hideBill()
                 } else {
                     self.cartItems = items
                     _ = self.returnTotal()
                     self.cartBillDelegate?.displayBill(bill: "\(self.returnTotal())")
+                    self.view?.reloadData()
                 }
             case .failure(let error) :
                 print(error.rawValue)

@@ -12,10 +12,8 @@ class CartVC: UIViewController {
     
     let tableView: UITableView = {
         let tableView = UITableView()
-        tableView.separatorColor = .clear
         tableView.rowHeight = 140
-        tableView.isUserInteractionEnabled = true
-        tableView.delaysContentTouches     = false
+        tableView.tableFooterView = UIView(frame: .zero)
         tableView.register(CartTableViewCell.self, forCellReuseIdentifier: CartTableViewCell.reuseIdentifier)
         return tableView
     }()
@@ -36,7 +34,6 @@ class CartVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         presenter.getCartItems()
-        tableView.reloadData()
     }
     
     

@@ -24,18 +24,6 @@ class HomeTableViewCell: UITableViewCell, HomeCellView {
         return bookImage
     }()
     
-    let containerView: UIView = {
-        let containerView = UIView()
-        containerView.layer.shadowColor   = UIColor.systemGray.cgColor
-        containerView.layer.shadowOpacity = 0.8
-        containerView.layer.shadowOffset  = .zero
-        containerView.layer.shadowRadius  = 6
-        containerView.backgroundColor     = .systemBackground
-        containerView.layer.cornerRadius  = 10
-        containerView.translatesAutoresizingMaskIntoConstraints = false
-        return containerView
-    }()
-    
     let avalibaleOrNotStatus: UIView = {
         let avalibaleOrNotStatus = UIView()
         avalibaleOrNotStatus.layer.cornerRadius = 7
@@ -55,34 +43,29 @@ class HomeTableViewCell: UITableViewCell, HomeCellView {
     }
     
     private func configure() {
-        addSubview(containerView)
-        containerView.addSubview(titleLabel)
-        containerView.addSubview(secondaryTitleLabel)
-        containerView.addSubview(bookImage)
-        containerView.addSubview(avalibaleOrNotLabel)
-        containerView.addSubview(avalibaleOrNotStatus)
+        addSubview(titleLabel)
+        addSubview(secondaryTitleLabel)
+        addSubview(bookImage)
+        addSubview(avalibaleOrNotLabel)
+        addSubview(avalibaleOrNotStatus)
         
         let padding:CGFloat = 4
         
         NSLayoutConstraint.activate([
-            containerView.topAnchor.constraint(equalTo: self.topAnchor,constant: 12),
-            containerView.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: padding),
-            containerView.trailingAnchor.constraint(equalTo: self.trailingAnchor,constant: -padding),
-            containerView.heightAnchor.constraint(equalToConstant: 120),
             
-            bookImage.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
-            bookImage.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: padding),
+            bookImage.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            bookImage.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: padding),
             bookImage.heightAnchor.constraint(equalToConstant: 80),
             bookImage.widthAnchor.constraint(equalToConstant: 80),
             
             titleLabel.topAnchor.constraint(equalTo: bookImage.topAnchor),
             titleLabel.leadingAnchor.constraint(equalTo: bookImage.trailingAnchor, constant: 24),
-            titleLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -padding),
+            titleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -padding),
             titleLabel.heightAnchor.constraint(equalToConstant: 20),
             
             secondaryTitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,constant: padding),
             secondaryTitleLabel.leadingAnchor.constraint(equalTo: bookImage.trailingAnchor, constant: 24),
-            secondaryTitleLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -padding),
+            secondaryTitleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -padding),
             secondaryTitleLabel.heightAnchor.constraint(equalToConstant: 18),
             
             avalibaleOrNotStatus.topAnchor.constraint(equalTo: secondaryTitleLabel.bottomAnchor,constant: 20),
@@ -92,7 +75,7 @@ class HomeTableViewCell: UITableViewCell, HomeCellView {
             
             avalibaleOrNotLabel.topAnchor.constraint(equalTo: secondaryTitleLabel.bottomAnchor,constant: 20),
             avalibaleOrNotLabel.leadingAnchor.constraint(equalTo: avalibaleOrNotStatus.trailingAnchor,constant: padding),
-            avalibaleOrNotLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -padding),
+            avalibaleOrNotLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -padding),
             avalibaleOrNotLabel.heightAnchor.constraint(equalToConstant: 16),
         ])
     }

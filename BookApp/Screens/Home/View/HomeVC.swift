@@ -11,7 +11,6 @@ class HomeVC: UIViewController {
     
     let tableView: UITableView = {
         let tableView = UITableView()
-        tableView.separatorColor = .clear
         tableView.rowHeight = 140
         tableView.register(HomeTableViewCell.self, forCellReuseIdentifier: HomeTableViewCell.reuseIdentifier)
         return tableView

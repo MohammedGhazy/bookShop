@@ -37,20 +37,20 @@ class GFEmptyCart: UIView {
         messageLabel.textColor        = .secondaryLabel
         messageLabel.numberOfLines    = 3
         
-        emptyCart.image   = UIImage(named: "emptyCart")
+        emptyCart.image   = UIImage(named: "box")
         emptyCart.translatesAutoresizingMaskIntoConstraints = false
         
         
         NSLayoutConstraint.activate([
-            emptyCart.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -150),
-            emptyCart.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 40),
-            emptyCart.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -40),
-            emptyCart.heightAnchor.constraint(equalToConstant: 200),
+            emptyCart.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            emptyCart.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            emptyCart.heightAnchor.constraint(equalToConstant: 150),
+            emptyCart.widthAnchor.constraint(equalToConstant: 150),
             
             messageLabel.topAnchor.constraint(equalTo: emptyCart.bottomAnchor, constant: 8),
             messageLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8),
             messageLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8),
-            messageLabel.heightAnchor.constraint(equalToConstant: 22)
+            messageLabel.heightAnchor.constraint(equalToConstant: 30)
             
         ])
     }

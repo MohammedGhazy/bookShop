@@ -11,6 +11,11 @@ import UIKit
 extension CartVC: UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if presenter.cartItems.isEmpty {
+            self.showEmptyState(with: "Your Cart Is Empty..", in: view.self)
+            billView.isHidden  = true
+            tableView.isHidden = true
+        } else {  }
         return presenter.cartItems.count
     }
     
@@ -31,17 +36,20 @@ extension CartVC: UITableViewDelegate,UITableViewDataSource {
         guard editingStyle  == .delete else { return }
         
         let items    = presenter.cartItems[indexPath.row]
-        presenter.cartItems.remove(at: indexPath.row)
-        tableView.deleteRows(at: [indexPath], with: .fade)
         
         CartManager.instance.updateWith(cartItems: items, actionType: .remove) {[weak self] error in
             guard let self = self else { return }
-            guard let error   = error else{ return }
+            guard let error   = error else{
+                self.presenter.cartItems.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+                self.reloadData()
+                return
+            }
             self.presentGFAlertOnMainThread(title: "Unable to delete", message: error.rawValue, buttonTitle: "Ok")
         }
         billView.billLabel.text = String(presenter.returnTotal())
     }
     
-    @objc func incrementButtonTapped(_ sender: UIButton) { presenter.setIncrementButton(index: sender.tag) }
-    @objc func decrementButtonTapped(_ sender: UIButton) { presenter.setDecrementButton(index: sender.tag) }
+    @objc func incrementButtonTapped(_ sender: UIButton) { presenter.setIncrementButton(index: sender.tag)}
+    @objc func decrementButtonTapped(_ sender: UIButton) { presenter.setDecrementButton(index: sender.tag)}
 }

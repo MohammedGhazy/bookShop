@@ -10,15 +10,17 @@ import UIKit
 
 extension CartVC: CartViewDelegate {
     
-    func showEmptyCart() {
-        showEmptyState(with: "Your Cart Is Empty 😞", in: self.view)
+    func reloadData() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
     func didIncrementQuantityButton(at index: Int) {
         presenter.cartItems[index].quantity += 1
-        tableView.reloadData()
+        reloadData()
         billView.billLabel.text = String(presenter.returnTotal())
-       _ = CartManager.instance.saveItems(cartItems: presenter.cartItems)
+        _ = CartManager.instance.saveItems(cartItems: presenter.cartItems)
     }
     
     func didDecrementQuantityButton(at index: Int) {
@@ -35,8 +37,8 @@ extension CartVC: CartViewDelegate {
             presenter.cartItems[index].quantity -= 1
         }
         billView.billLabel.text = String(presenter.returnTotal())
-        tableView.reloadData()
-       _ = CartManager.instance.saveItems(cartItems: presenter.cartItems)
+        reloadData()
+        _ = CartManager.instance.saveItems(cartItems: presenter.cartItems)
     }
 }
 

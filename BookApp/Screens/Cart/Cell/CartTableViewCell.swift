@@ -53,18 +53,6 @@ class CartTableViewCell: UITableViewCell , CartCellView {
         return bookImage
     }()
     
-    let containerView: UIView = {
-        let containerView = UIView()
-        containerView.layer.shadowColor   = UIColor.systemGray.cgColor
-        containerView.layer.shadowOpacity = 0.8
-        containerView.layer.shadowOffset  = .zero
-        containerView.layer.shadowRadius  = 6
-        containerView.backgroundColor     = .systemBackground
-        containerView.layer.cornerRadius  = 10
-        containerView.translatesAutoresizingMaskIntoConstraints = false
-        return containerView
-    }()
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configure()
@@ -75,11 +63,10 @@ class CartTableViewCell: UITableViewCell , CartCellView {
     }
     
     private func configure() {
-        addSubview(containerView)
-        containerView.addSubview(bookImage)
-        containerView.addSubview(nameLabel)
-        containerView.addSubview(priceLabel)
-        containerView.addSubview(quantityStackView)
+        addSubview(bookImage)
+        addSubview(nameLabel)
+        addSubview(priceLabel)
+        addSubview(quantityStackView)
         
         quantityStackView.addArrangedSubview(incrementButton)
         quantityStackView.addArrangedSubview(counterLabel)
@@ -88,28 +75,24 @@ class CartTableViewCell: UITableViewCell , CartCellView {
         let padding:CGFloat = 4
         
         NSLayoutConstraint.activate([
-            containerView.topAnchor.constraint(equalTo: self.topAnchor,constant: 12),
-            containerView.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: padding),
-            containerView.trailingAnchor.constraint(equalTo: self.trailingAnchor,constant: -padding),
-            containerView.heightAnchor.constraint(equalToConstant: 120),
-            
-            bookImage.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
-            bookImage.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: padding),
+        
+            bookImage.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            bookImage.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: padding),
             bookImage.heightAnchor.constraint(equalToConstant: 80),
             bookImage.widthAnchor.constraint(equalToConstant: 80),
             
             nameLabel.topAnchor.constraint(equalTo: bookImage.topAnchor),
             nameLabel.leadingAnchor.constraint(equalTo: bookImage.trailingAnchor, constant: 24),
-            nameLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -padding),
+            nameLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -padding),
             nameLabel.heightAnchor.constraint(equalToConstant: 20),
             
             priceLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor,constant: padding),
             priceLabel.leadingAnchor.constraint(equalTo: bookImage.trailingAnchor, constant: 24),
-            priceLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -padding),
+            priceLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -padding),
             priceLabel.heightAnchor.constraint(equalToConstant: 18),
             
             quantityStackView.topAnchor.constraint(equalTo: nameLabel.bottomAnchor,constant: padding),
-            quantityStackView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor,constant: -12),
+            quantityStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor,constant: -12),
             quantityStackView.heightAnchor.constraint(equalToConstant: 30),
             
         ])

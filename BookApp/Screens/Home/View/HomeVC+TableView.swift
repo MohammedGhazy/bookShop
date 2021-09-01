@@ -18,6 +18,7 @@ extension HomeVC: UITableViewDelegate,UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.reuseIdentifier, for: indexPath) as! HomeTableViewCell
         presenter.configure(cell: cell , for: indexPath.row)
         cell.selectionStyle = .none
+        cell.accessoryType  = .disclosureIndicator
         return cell
     }
     
